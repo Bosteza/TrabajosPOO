@@ -1,0 +1,42 @@
+
+
+public class Círculo {
+	
+	public float id;
+	public float radio;
+	public static int contador = 1;
+
+	public Círculo(float id) {
+		
+		this.id=id;
+		this.radio=id/100;
+		
+		
+		
+		
+	}
+	
+	
+	 @Override
+	    public String toString() {
+	        return "Círculo" + contador++;
+	    }
+	
+	
+	////////////Métodos
+	public double getAr() {
+		return Math.PI *(radio*radio);
+	}
+	
+	public float getC() {
+        return (float) (2 * Math.PI * radio);
+    }
+	
+	    
+
+	   
+	}
+
+
+
+	
