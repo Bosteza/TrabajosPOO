@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Process {
+    
+    public static void modificarCirculo(Círculo[] circulos) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Ingrese el índice del círculo que desea modificar:");
+        int indice = Integer.parseInt(scan.nextLine());
+
+        if (indice >= 0 && indice < circulos.length) {
+            System.out.println("Medida del radio: ");
+            float radio = Float.parseFloat(scan.nextLine());
+            circulos[indice] = new Círculo(radio);  
+
+            System.out.println("Selecciona lo que quieres calcular:");
+            System.out.println("1. Circunferencia");
+            System.out.println("2. Área");
+            System.out.println("3. Otra figura");
+            System.out.println("Cualquier otra cosa para salir");
+
+            int calculoSeleccionado = Integer.parseInt(scan.nextLine());
+            switch (calculoSeleccionado) {
+                case 1:
+                    System.out.println("Circunferencia: " + circulos[indice].getC());
+                    break;
+                case 2:
+                    System.out.println("Área: " + circulos[indice].getAr());
+                    break;
+                case 3:
+                    // Si se quiere seguir con otro cálculo, se puede hacer aquí.
+                    break;
+                default:
+                    System.out.println("Hasta pronto");
+                    System.exit(0);
+                    break;
+            }
+        } else {
+            System.out.println("El índice ingresado está fuera del rango válido.");
+        }
+
+        scan.close();
+    }
+}
